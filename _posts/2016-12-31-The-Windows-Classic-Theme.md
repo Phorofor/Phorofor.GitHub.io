@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Classic Theme in Windows 10 and 8.1 (ClassicTheme.exe)*
+title: The Classic Theme in Windows 10 and 8.1 (ClassicTheme.exe)
 description: "The Windows Classic Theme in Windows 10 & 8.1 with a series of text explaining the method I simply use to get the native Classic Theme working to some reasonable extent with its consequences."
 modified: 2016-12-31T10:56:29+00:00
 tags: [Windows, Classic Theme, ClassicTheme.exe, Windows 8.1, Windows 10]
