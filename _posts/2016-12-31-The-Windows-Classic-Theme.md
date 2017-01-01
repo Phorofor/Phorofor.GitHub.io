@@ -182,7 +182,7 @@ taskkill /IM dwm.exe /f
 explorer.exe
 ```
 
-* Anything that involves the immersive flyouts will not work. This includes the network, battery, language, clock, volume and action center flyouts.
+* Anything that involves the immersive flyouts will not work. This includes the network, battery, language, clock, volume and action center flyouts in the taskbar.
 
 * You can use the legacy-style Alt-Tab App Switcher (which is used in the actual Classic Theme) by tweaking [some values in your registry](http://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/).
 
@@ -324,12 +324,12 @@ You still have to use the Run box or Task Manager new task dialog's 'Browse...' 
 I messed with this program for a bit some time back and there's some interesting stuff that nobody that I've seen yet to point it out.
 
 <figure>
-	<a href="/images/WinClassicTheme/ColorAppletDWMDisabled.png"><img src="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" alt=""></a>
+	<a href="/images/WinClassicTheme/ColorAppletDWMDisabled.png"><img src="/images/WinClassicTheme/ColorAppletDWMDisabled.png" alt=""></a>
 	<figcaption><a href="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" title="Was this supposed to be a toggle?">"{Desktop composition is disabled}"? Did Microsoft originally intend there to be a switch to do this, or does this message exist in other versions of Windows? I don't know since there's no *native* way to switch off the DWM in anything later than Windows 7. This is the result when trying to change the colors where it would open up the Immersive version of Settings.</a></figcaption>
 </figure>
 
 <figure>
-	<a href="/images/WinClassicTheme/ServerCore2016Login.png"><img src="/images/WinClassicTheme/ServerCore2016Login.PNG" alt=""></a>
+	<a href="/images/WinClassicTheme/ServerCore2016Login.png"><img src="/images/WinClassicTheme/ServerCore2016Login.png" alt=""></a>
 	<figcaption><a href="/images/WinClassicTheme/ServerCore2016Login.png" title="It's only just text. Nothing more.">This is the login screen for Windows Server Core 2016, which runs the non-DWM version of the Aero Lite theme (the 'Basic' version of it). It would be cool if we could actually have a logon UI like this in regular installations of Windows. It also doesn't rely on the DWM as it doesn't exist in Server Core. Its CTRL + ALT + DELETE options are also displayed in a list.</a></figcaption>
 </figure>
 
