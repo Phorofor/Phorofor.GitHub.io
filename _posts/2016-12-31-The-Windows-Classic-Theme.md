@@ -13,9 +13,11 @@ image:
 
 I decided to write this to reduce the tediousness it took for myself to browse through multiple forums and desperately lurk through search results for new answers and pointlessly watching newly encountered videos that provide pretty much **zero critical explanation** of any **consequences** that are incurred and not providing a **huge disclaimer that the ClassicTheme.exe utility has the potential to bug out**. The method I use for **manually removing this** is also in this post.
 
+*[Last Updated: Sun, 1 Jan 2017 08:45:56 UTC]*
+
 The following is a series of text, explaning the tools I encountered upon to be able to run the Classic Theme in latest versions of Windows (8.1/10) despite Microsoft removing the Windows Classic Theme that took place in Windows 8. It was featured in Windows XP and is no longer an available feature after Windows 7. Anything performed here is done for experimental purposes and I do not recommend this for the typical user. 
 
-Nobody has seemed to write up a guide of how to fix this in the event it actually does blank out your screen (most likely due to the antivirus software deleting the ClassicTheme executable while it configured itself to run upon user login). This is for those who desperately want to try this out or those who want to fix this without reinstalling, this is the same way I've figured it out and I thought others would've as well but that doesn't seem to be the case here. Try it in a virtual machine if you want and see for yourself if you're really suspicious of how this behaves. Read everything here first before doing any of the things mentioned. **Scroll near the bottom to find the fix that may work** or use ``CTRL/COMMAND + F`` and search for ``I got a black screen after installing ClassicTheme.exe``.
+Nobody has seemed to write up a guide of how to fix this in the event it actually does blank or black out your screen (most likely due to the antivirus software deleting the ClassicTheme executable while it configured itself to run upon user login). This is for those who desperately want to try this out or those who want to fix this without reinstalling, this is the same way I've figured it out and I thought others would've as well but that doesn't seem to be the case here. Try it in a virtual machine if you want and see for yourself if you're really suspicious of how this behaves. Read everything here first before doing any of the things mentioned. **Scroll near the bottom to find the fix that may work** or use ``CTRL/COMMAND + F`` and search for ``I got a black screen after installing ClassicTheme.exe``.
 
 The Classic Theme, as we know it, seems to be an ａｅｓｔｈｅｔｉｃａｌｌｙ iconic user interface considering you can make a modern system running Windows look like it's back from 1995! It just looks so simple, right? Simple shapes and buttons that have a 3D block-like effect placed on a plain gray background which happened to be seen in a lot of places, like online videos, actual use in workplaces and industries, public displays exposing the UI and it still is partially featured in today's versions of Windows. 
 
@@ -57,7 +59,7 @@ We can now run the ClassicTheme.exe. Here's a description of what these options 
 	2. If a file ``iexplore.bak0`` exists, delete ``iexplore.exe``, ``dwm_rdr.dll`` and ``dwmapi.dll``
 	3. Rename ``iexplore.bak0`` to iexplore.exe
 
-* Enable Classic Theme now - *This is basically the way I highly recommend to use this tool. It lets you apply the Classic Theme to only newly spawned processes, so you can use this to run the taskbar without the Classic Theme applied as long as you do not restart Explorer. Otherwise, you'll have to logoff and logon again*
+* Enable Classic Theme now - *This is basically the way I highly recommend to use this tool. It lets you apply the Classic Theme to only newly spawned processes, so you can use this to run the taskbar without the Classic Theme applied as long as you do not restart Explorer. Otherwise, you'll have to logoff and logon again. This can also be accomplished manually by using something like Process Hacker and closing the ``ThemeSection`` handle under the ``winlogon.exe`` process, this is what this utility does.*
 
 I don't recommend using the 'Install' button to apply thism as it has a chance of breaking, essentially leaving you with a blank screen which might scare some people if they blantantly just try this stuff out and expect it to work flawlessly. This can be a problem especially if you don't have an alternative Task Manager like [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/processexplorer.aspx)  Instead, just rename it to ``ClassicThemeA.exe`` (this essentially applies the fourth option without any further prompts), set up a scheduled task through the Task Scheduler - ``taskschd.msc``. Set it up so it only runs for YOUR user upon login and allow it to run with the highest priviledges. ``Task Scheduler > Action > Create Task... > Select 'Run only when the user on logged on' > Check the 'Run with highest priviledges' box > Go to the 'Triggers' > New... > Begin the task: At logon > Specific user > OK``. It'll be applied for new processes. Note that this will keep the taskbar in its themed state which is suitable for Windows 10 users, until you restart Explorer.
 
@@ -205,8 +207,14 @@ There's nothing really secure about this if you don't take the right precautions
 	* However, these may not be as useful or have zero effect if you're running Explorer with Administrator Priviledges as someone can just open a Run prompt and run anything they wish to (like ``netplwiz`` with no UAC consent). Again, I wouldn't recommend bothering to try and run Windows 10 with DWM off, unless you really are desperately wanting to see those basic themes. It also tends to disable the graphics driver.
 	* You should actually use UAC with prompts with credentials anyway for the best security (especially if there's other people physically nearby), preferably on the secure desktop since other software shouldn't be able to easily track your keystrokes. It's macOS-esque and gives you less opportunity to rush in and blatantly click 'Yes' without carefully reading what program is requesitng elevation.
 
-* Ensure you have placed your Classic Theme files in a easy to access folder (you can place it somewhere such as ``C:\ClassicTheme\`` and restrict permissions on the folder. ``Secondary click your Classic Theme folder > Properties > Security tab > Users > Tick the 'Deny' checkbox for the 'Write' permission``. If you feel the need, you can restrict it for other users as well. This just stops the Classic Theme folder from being changed by standard users.
+<figure>
+	<!-- <a href="#"> --><img src="/images/WinClassicTheme/WindowPainting.gif" alt="if"><!--</a>--><figcaption><a href="/images/WinClassicTheme/WindowPainting.gif" title="Simulated using Microsoft Paint while holding SHIFT on an image and dragging it at various paces.">Simulated using Microsoft Paint while holding SHIFT on an image and dragging it at various paces.</a></figcaption>
+</figure>
+
+* You'll also get the 'window painting' effect, which is typical to be seen when a program stops responding. So windows that you may close will have portions of its window still being displayed until another window overlaps it. 
 	
+* Ensure you have placed your Classic Theme files in an easy to access folder (you can place it somewhere such as ``C:\ClassicTheme\`` and restrict permissions on the folder. ``Secondary click your Classic Theme folder > Properties > Security tab > Users > Tick the 'Deny' checkbox for the 'Write' permission``. If you feel the need, you can restrict it for other users as well. This just stops the Classic Theme folder from being changed by standard users.	
+
 ## DWM and (Unofficial) Classic Theme Performance
 I got inspired by this [video](https://www.youtube.com/watch?v=LfROOvOaHXM) and did a cmd.exe session spam myself on the actual machine I use, with no login items other than typical background and updater services running. Instead of one-hundred cmd.exe sessions I performed three-hundred. The first command does a ``time`` command, I take a screenshot to paste in mspaint later as I set a timeout of 5 seconds using ``timeout 5`` for it to spam the windows, then I get the finishing time displayed by the last window. I then take the difference of the times then take away 5 seconds from the final result. The user interface lag is only noticable if you have an obnoxious amount of windows open - In this case it's 300. Clicking the 'Show desktop' button will take a good few seconds to hide those Command Prompt windows.
 
@@ -283,7 +291,7 @@ Since using the 'Install' option for this program sets itself as the shell (that
 		<!-- <a href="#"> --><img src="/images/WinClassicTheme/BrokenExplorerTaskbar.gif" alt=""><!--</a>--><figcaption><a href="/images/WinClassicTheme/BrokenExplorerTaskbar.gif" title="If you FORGET to delete the 'Shell' item in the Registry, your taskbar is going to have its own party of preventing any Explorer window from opening.">If you FORGET to delete the 'Shell' item in the Registry, your taskbar is going to have its own party of preventing any Explorer window from opening as seen by the taskbar having its color black with its borders sticking out. This also happens if you do not delete the .dlls that were mentioned previously.</a></figcaption>
 	<figure>
 
-At this point ClassicTheme.exe is still be marked as 'installed' and we'll need the original ClassicTheme.exe. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin. 
+At this point, ClassicTheme.exe is still be marked as 'installed' and we'll need the original ClassicTheme.exe. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin. 
 
 ### You need access to another copy of ClassicTheme.exe
 For this final part, you need to be able to run the ClassicTheme.exe in order to stop the taskbar from breaking and Explorer windows refusing to open. I can't seem to find another way to fix this without having to use ClassicTheme.exe yet. So it may be problematic for a lot of antiviruses as **it'll remove it** before you even get to do anything. You will have to either whitelist a folder dedicated to ClassicTheme.exe or temporarily disable your anti-malware software which usually detects it if you're extracting it from the compressed archive, or you can use Safe Mode. 
@@ -317,7 +325,7 @@ I messed with this program for a bit some time back and there's some interesting
 
 <figure>
 	<a href="/images/WinClassicTheme/ServerCore2016Login.PNG"><img src="/images/WinClassicTheme/ServerCore2016Login.PNG" alt=""></a>
-	<figcaption><a href="/images/WinClassicTheme/ServerCore2016Login.PNG" title="It's only just text. Nothing more.">This is the login screen for Windows Server Core 2016, which runs the non-DWM version of the Aero Lite theme (the 'Basic' version of it, if you think about it). It would be cool if we could actually have a logon UI like this in regular installations of Windows. It also doesn't rely on the DWM as it doesn't exist in Server Core. Its CTRL + ALT + DELETE options are also displayed in a list.</a></figcaption>
+	<figcaption><a href="/images/WinClassicTheme/ServerCore2016Login.PNG" title="It's only just text. Nothing more.">This is the login screen for Windows Server Core 2016, which runs the non-DWM version of the Aero Lite theme (the 'Basic' version of it). It would be cool if we could actually have a logon UI like this in regular installations of Windows. It also doesn't rely on the DWM as it doesn't exist in Server Core. Its CTRL + ALT + DELETE options are also displayed in a list.</a></figcaption>
 </figure>
 
 
@@ -337,7 +345,6 @@ I messed with this program for a bit some time back and there's some interesting
 {% capture images %}
 	/images/WinClassicTheme/BetterContextCompare/WinJumplists.png
 {% endcapture %}
-
 
 {% include gallery images=images caption="Here's another comparison, Windows 10's jump list got more optimised for touch screen displays, which also takes a lot more pixels for smaller displays. The unofficial Classic Theme in Windows 8.1 also puts a nice 3D effect, like in context menus unlike in Windows 7." cols=5 %}
 
