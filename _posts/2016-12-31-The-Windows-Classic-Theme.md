@@ -7,13 +7,13 @@ tags: [Windows, Classic Theme, ClassicTheme.exe, Windows 8.1, Windows 10]
 
 image:
   feature: /WinClassicTheme/BackgroundImage.png
-  credit: "Note: 'This PC' and 'File History' (Click for full)"
+  credit: "Note: 'This PC' and 'File History'"
   creditlink: /images/WinClassicTheme/BackgroundImage.png
 ---
 
 I decided to write this to reduce the tediousness it took for myself to browse through multiple forums and desperately lurk through search results for new answers and pointlessly watching newly encountered videos that provide pretty much **zero critical explanation** of any **consequences** that are incurred and not providing a **huge disclaimer that the ClassicTheme.exe utility has the potential to bug out**. The method I use for **manually removing this** is also in this post.
 
-*[Last Updated: Sun, 1 Jan 2017 08:45:56 UTC]*
+*[Last Updated: Sun Jan 1 15:10:06 2017 UTC]*
 
 The following is a series of text, explaning the tools I encountered upon to be able to run the Classic Theme in latest versions of Windows (8.1/10) despite Microsoft removing the Windows Classic Theme that took place in Windows 8. It was featured in Windows XP and is no longer an available feature after Windows 7. Anything performed here is done for experimental purposes and I do not recommend this for the typical user. 
 
@@ -34,11 +34,11 @@ The Classic Theme is technically still there in some cases, like when using the 
 
 A while back, I actually encountered this program on [this forum - no direct link here since you should read what's it about.](http://forum.thinkpads.com/viewtopic.php?f=67&t=113024&sid=a9931bb404e7001f92ffdad7e547ff4b), provided by a user called IbmPad. There's another forum that's a bit more recent called the [WinClassic Boards](http://winclassic.boards.net/) by other users dedicated to this ClassicTheme.exe. I've encountered videos that demonstrate this, but they don't really demonstrate it that great and never acknowledge that it may *temporarily* break things and forgetting to mention the original source of the program, which may have scared a lot of people into thinking someone has essentially broken their OS, due to the fact the antiviruses automatically remove it.
 
-Now, this program is just called ``ClassicTheme.exe``, or just referred as the 'theme disabler' and that's what it essentially does. It achieves the effect of having the native Classic Theme working on 8.1 or 10 to some extent. I use this myself since I dislike seeing obnoxiously gigantic minimize, maximize and close titlebar buttons and I don't use Windows on a touch screen and the fact that I don't like the plain flat and solid color appearance that the modern UI has to offer. In this article, I'm simply going to refer it as the 'unofficial Classic Theme' or 'Classic Theme' in some instances.
+Now, this program has a generic name called ``ClassicTheme.exe``, or just referred as the 'theme disabler' and that's what it essentially does. It achieves the effect of having the native Classic Theme working on 8.1 or 10 to some extent. I use this myself since I dislike seeing obnoxiously gigantic minimize, maximize and close titlebar buttons and I don't use Windows on a touch screen and the fact that I don't like the plain flat and solid color appearance that the modern UI has to offer. In this article, I'm simply going to refer it as the 'unofficial Classic Theme' or 'Classic Theme' in some instances.
 
 **An important thing to note here is this Classic Theme utility triggers a lot various antiviruses, so it's not recommended if you believe running this will somehow cause damage to your system which is probably why a lot of people who were uninformed and didn't look at [the original forum where this originated](http://forum.thinkpads.com/viewtopic.php?f=67&t=113024) are outraged (looking at those online video tutorials that didn't link to the original source or didn't mention the original forum where this was hosted). Source code is included in the original download, just don't go get it from other sources that's not on the forum that was described earlier. Create a folder for the Classic Theme executable and exclude it in your antivirus software if you wish to continue (not excluding it seems to cause it to break on the next login whenever an antivirus detects it and quarantines it, causing an empty blank desktop to appear).**
 
-If you've got the ClassicTheme program ready, I suggest you place it in a easy to access folder at the root of your system drive, such as ``C:\ClassicTheme\``. Along with the other tools that will be mentioned. We'll be using [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/processexplorer.aspx) as a substitute for the Task Manager, as it'll make it easier incase something goes wrong since the fancy new(ish) Task Manager closes itself whenever the ClassicTheme.exe is active. I recommend placing Process Explorer with the same location as your ClassicTheme.exe.
+If you've got the ClassicTheme program ready, I suggest you place it in a easy to access folder at the root of your system drive, such as ``C:\ClassicTheme\`` along with the other tools that will be mentioned. We'll be using [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/processexplorer.aspx) as a substitute for the Task Manager, as it'll make it easier incase something goes wrong since the fancy new(ish) Task Manager closes itself whenever the ClassicTheme.exe is active. I recommend placing Process Explorer with the same location as your ClassicTheme.exe.
 
 We're going to set the Process Explorer as the default Task Manager:
 * Right click Process Explorer then choose 'Run as Administrator'
@@ -84,13 +84,14 @@ Many things are broken or have buggy visual artifacts if you ever want to actual
 {% endcapture %}
 {% include gallery images=images caption="Here's the various context menus with theming and without. No shadows are enabled. The first two images are with the Immersive context menus (left) and without (second image from left to right) on Windows 10, note that it disregards any font settings that are performed through changing in a Windows & Metrics applet. The third image is the context menu in Windows 8 while the fourth and fifth images are Windows 10 context menus with no theming with and without the 3D effect. The size difference in the images with the Windows 8.1 and Windows 10 non-Immersive menus happen to be 1px, possibly due to the 'Display settings' and 'Screen resolution' text affecting the width. Finally, there is an irrelevant Windows XP context menu as there doesn't seem to be anything else that remains exactly consistent in terms of wording and context menu options." cols=5 %}
 
+
 * If you want to get the full 3D effect back without those plain solid blue context menu highlights, use [User Preferences Mask Calculator](http://www.softpedia.com/get/Tweak/Registry-Tweak/UPMCalc.shtml). Ignore the Windows 7 warning and uncheck the box for bit 17 (Use visual styles on windows and buttons). If you like seeing the dotted rectangle upon clicking a button, you can uncheck the box for bit 31 (Enable UI effects). This will also remove that titlebar gradient and any visual animations.
 
 * Blank grey space in apps such as Microsoft Paint and WordPad where Save and Undo options are integrated within titlebar. The Explorer also has a huge blank transparent space. You can use something like [WinAero's Ribbon Disabler](http://winaero.com/comment.php?comment.news.20) to essentially hide it. This also applies with DWM off.
 
-* Troubleshooting dialogs and some programs such as Microsoft Word 2010 have portions with transparency annoyances, essentially making the area where a transparent effect  is supposed to have some sort of color fill taking place see through completely. Killing the DWM negates this issue. However, it is not suitable for Windows 10 as it's even more broken than it is in Windows 8.1. In Windows 8.1, the Windows Photo Viewer controls' background are fully transparent.
+* Troubleshooting dialogs and some programs including Microsoft Office 2010 have portions with transparency broken, essentially making the area where a transparent effect is supposed to have some sort of color fill taking place see through completely. Killing the DWM negates this issue. However, it is not suitable for Windows 10 as it's even more broken than it is in Windows 8.1. In Windows 8.1, the Windows Photo Viewer controls' background are fully transparent.
 
-* The Task Manager will will NOT work with this unofficial Classic Theme. I recommend a copy of [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/processexplorer.aspx), place it in a fixed location and set it to replace Task Manager. If you want instead, you can snag an installation of the [legacy Task Manager](http://winaero.com/blog/get-classic-old-task-manager-in-windows-10/) which is also a part of the Windows Pre-Installation Envirionment.
+* The Task Manager will will NOT work with this unofficial Classic Theme. I recommend a copy of [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/processexplorer.aspx) which is hosted on Microsoft's TechNet site, place it in a fixed location and set it to replace Task Manager. If you want instead, you can snag an installation of the [legacy Task Manager (look further down for the Windows 8 version)](http://winaero.com/blog/get-classic-old-task-manager-in-windows-10/) which is also a part of the Windows Pre-Installation Envirionment.
 
 * For 64-bit Firefox, you'll need a copy of the ClassicTheme.exe's .dll files that is copied into the ``C:\Windows\`` directory when using its regular 'Install' option (**Make sure you set Process Explorer as your default Task Manager, so you can easily revert**, you can uninstall it later to revert the changes, as it has a chance of messing up when logging in). 
 
@@ -117,14 +118,14 @@ Many things are broken or have buggy visual artifacts if you ever want to actual
 
 
 	
-* On Windows 10, restarting the Explorer.exe with the unofficial Classic Theme will cause your taskbar to have icons on the taskbar to be 'stuck together'. You can still click on icons though. It's better to run it as ClassicThemeA.exe so you'll still remain with decent taskbar functionality.
+* On Windows 10, restarting the Explorer.exe with the unofficial Classic Theme will cause your taskbar to have icons on the taskbar to be 'stuck together' when grouping is enabled and taskbar labels will appear blank. You can still click on icons though. It's better to run it as ClassicThemeA.exe so you'll still remain with decent taskbar functionality.
 
-* If you want to, you can use the legacy-style Alt-Tab App Switcher (which is used in the actual Classic Theme) by tweaking [some values in your registry](http://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/). This is only useful for those who run it as ClassicThemeA.exe without restarting Explorer.
+* Some Control Panel applets will [fail to load](http://winclassic.boards.net/thread/11/issues-windows-classic-theme-on).
 
 #### If you want to prevent the DWM from running...
 With DWM off, you will simply achieve that Windows 7 Basic-like feel, with themes reverting to its 'Basic' variant instead of Aero and also removing those see-through portions of certain programs, but this breaks a lot more functionality, especially in Windows 10 where more of the UI is more dependant on the DWM than it was in 8.1.
 
-For Windows 8.1 users, there's a batch script provided by [R.O.B on the WinClassic Boards with a better explaination on this script than the simple one here](http://winclassic.boards.net/thread/129/alternate-method-disabling-dwm-windows) that renames the dwm.exe to a different name to prevent it from being able to run again for 3 seconds, then it renames it back so it'll be able to be run again when needed. It also renames the files responsible for bringing up the search UI (adds a .BAK extension to them, preventing the search UI from creating the huge blank space that covers right side of the screen).
+For Windows 8.1 users, there's a batch script provided by [R.O.B on the WinClassic Boards with a better explaination on this script than the simple one here](http://winclassic.boards.net/thread/129/alternate-method-disabling-dwm-windows) that renames the dwm.exe to a different name to prevent it from being able to run again for 3 seconds as the winlogon process doesn't bother to spawn the dwm process again, then it renames it back so it'll be able to be run again when needed. It also renames the files responsible for bringing up the search UI (adds a .BAK extension to them, preventing the search UI from creating the huge blank space that covers right side of the screen).
 
 ```
 @echo off
@@ -152,7 +153,7 @@ start explorer.exe
 exit
 ```
 
-#### To rename the search bar back to its defaults [(again, provided by 'R.O.B',login needed)](http://winclassic.boards.net/thread/129/alternate-method-disabling-dwm-windows):
+#### To rename the search bar back to its defaults [(again, provided by 'R.O.B' [login needed])](http://winclassic.boards.net/thread/129/alternate-method-disabling-dwm-windows):
 ```
 @echo off
 taskkill /f /im explorer.exe
@@ -165,8 +166,8 @@ This works fine in Windows 8.1. You can still access the security options throug
 **Do NOT use in Windows 10**: It'll eventually force you to log out with an error message or leave you at a blank screen if you try this multiple times. Also, I tried modifying this script to remove the timeout and the commands to rename the search UI to test it in Windows 10 and all it does it spawn itself back up again or leave me staring at a blank screen.
 
 <figure>
-	<a href="/images/WinClassicTheme/Win10DWMRename.PNG"><img src="/images/WinClassicTheme/Win10DWMRename.PNG" alt=""></a>
-	<figcaption><a href="/images/WinClassicTheme/Win10DWMRename.PNG" title="It's the actual Classic Theme, but there's no switch to switch it on or off like in Windows 7!">At least you get a brief glance at a dialog box with a classic theme briefly before returning you to the Windows 10 lock screen or having a chance at blanking out your system if you don't see this dialog</a>.</figcaption>
+	<a href="/images/WinClassicTheme/Win10DWMRename.png"><img src="/images/WinClassicTheme/Win10DWMRename.png" alt=""></a>
+	<figcaption><a href="/images/WinClassicTheme/Win10DWMRename.png" title="It's the actual Classic Theme, but there's no switch to switch it on or off like in Windows 7!">At least you get a brief glance at a dialog box with a classic theme briefly before returning you to the Windows 10 lock screen or having a chance at blanking out your system if you don't see this dialog</a>.</figcaption>
 </figure>
 
 In Windows 10, the only way to accomplish preventing the Desktop Window Manager from being able to run is to suspend the winlogon process. I would not recommend this since it messes up with things like display sleeping and the inability for logoff/shutdown/restart actions to take place and this isn't really a good method just for the sake of switching off the DWM. 
@@ -181,15 +182,19 @@ taskkill /IM dwm.exe /f
 explorer.exe
 ```
 
+* Anything that involves the immersive flyouts will not work. This includes the network, battery, language, clock, volume and action center flyouts.
+
+* You can use the legacy-style Alt-Tab App Switcher (which is used in the actual Classic Theme) by tweaking [some values in your registry](http://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/).
+
 * Unlike having DWM forcibly killed in Windows 10, Windows 8.1 works just fine with jumplists and the taskbar. You still won't get thumbnails or Aero Peek, though.
 
 * With DWM forced off, you'll exhibit screen tearing and it doesn't look too good. For some reason I've only noticed this when I've been trying DWM with it being forced off on Windows 10. It'll occasionally somehow disable my video driver up killing it for the integrated graphics card, so I would have to go to Device Manager or ``devmgmt.msc`` and disable and enable it.
 
 * If you like running Windows 10 with DWM forced off, go and [tweak your registry](http://www.askvg.com/collection-of-windows-10-hidden-secret-registry-tweaks/) to enable the legacy battery and volume taskbar fly-outs. The legacy clock is not a thing anymore since the anniversary update.
 
-* In Windows 10, thumbnail previews look ugly with DWM off, with excessive padding around. Secondary (right) click options are unavailable in the taskbar. If you use it with DWM forced off, you can use the [Aero Lite](http://www.askvg.com/how-to-enable-hidden-aero-lite-theme-in-windows-8-rtm/) theme (or a high contrast theme to take away the extra preview space) and use [7+ Taskbar Tweaker](http://rammichael.com/7-taskbar-tweaker) to display previews as a list and have its right click options set to 'Standard window menu'. It's the equivalent of secondary clicking a window titlebar and displays it much faster. 
+* In Windows 10, thumbnail previews look incomplete with DWM off, with excessive padding around. Secondary (right) click options are unavailable in the taskbar. If you use it with DWM forced off, you can use the [Aero Lite](http://www.askvg.com/how-to-enable-hidden-aero-lite-theme-in-windows-8-rtm/) theme (or a high contrast theme to take away the extra preview space) and use [7+ Taskbar Tweaker](http://rammichael.com/7-taskbar-tweaker) to display previews as a list and have its right click options set to 'Standard window menu'. It's the equivalent of secondary clicking a window titlebar and displays it much faster. 
 
-* In some apps such as Google Chrome or any other Chromium-based browser, the title bar may also flicker when it updates. If you are somehow running without DWM, those programs with just have black windows displayed. You can use the ``-disble-gpu`` argument to get them to work (you won't get GPU acceleration though) if you happen to be running without DWM. Also, the ``--disable-dwm-composition`` argument will treat it as if you have Desktop Window Manager switched off for those apps. You must apply these arguments of an application's shortcut path.
+* In some apps such as Google Chrome or any other Chromium-based browser, the title bar may also flicker when it updates. If you are somehow running without DWM, those programs with just have black windows displayed. You can use the ``-disble-gpu`` argument to get them to work (you won't get GPU acceleration though) if you happen to be running without DWM. Also, the ``--disable-dwm-composition`` argument will treat it as if you have Desktop Window Manager switched off for those apps. You must apply these arguments of an application's shortcut path. If you with to use these two together you must place the ``disable-gpu`` argument after the ``disable-dwm-composition`` argument.
 
 # Security
 There's nothing really secure about this if you don't take the right precautions. Forcing the DWM to not run is actually way insecure than just running the Classic Theme executable. I use this unofficial Classic Theme myself (with DWM on and as a scheduled task to run ClassicThemeA.exe), but please realise that there's still a few things you should actually consider:
@@ -319,13 +324,13 @@ You still have to use the Run box or Task Manager new task dialog's 'Browse...' 
 I messed with this program for a bit some time back and there's some interesting stuff that nobody that I've seen yet to point it out.
 
 <figure>
-	<a href="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG"><img src="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" alt=""></a>
+	<a href="/images/WinClassicTheme/ColorAppletDWMDisabled.png"><img src="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" alt=""></a>
 	<figcaption><a href="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" title="Was this supposed to be a toggle?">"{Desktop composition is disabled}"? Did Microsoft originally intend there to be a switch to do this, or does this message exist in other versions of Windows? I don't know since there's no *native* way to switch off the DWM in anything later than Windows 7. This is the result when trying to change the colors where it would open up the Immersive version of Settings.</a></figcaption>
 </figure>
 
 <figure>
-	<a href="/images/WinClassicTheme/ServerCore2016Login.PNG"><img src="/images/WinClassicTheme/ServerCore2016Login.PNG" alt=""></a>
-	<figcaption><a href="/images/WinClassicTheme/ServerCore2016Login.PNG" title="It's only just text. Nothing more.">This is the login screen for Windows Server Core 2016, which runs the non-DWM version of the Aero Lite theme (the 'Basic' version of it). It would be cool if we could actually have a logon UI like this in regular installations of Windows. It also doesn't rely on the DWM as it doesn't exist in Server Core. Its CTRL + ALT + DELETE options are also displayed in a list.</a></figcaption>
+	<a href="/images/WinClassicTheme/ServerCore2016Login.png"><img src="/images/WinClassicTheme/ServerCore2016Login.PNG" alt=""></a>
+	<figcaption><a href="/images/WinClassicTheme/ServerCore2016Login.png" title="It's only just text. Nothing more.">This is the login screen for Windows Server Core 2016, which runs the non-DWM version of the Aero Lite theme (the 'Basic' version of it). It would be cool if we could actually have a logon UI like this in regular installations of Windows. It also doesn't rely on the DWM as it doesn't exist in Server Core. Its CTRL + ALT + DELETE options are also displayed in a list.</a></figcaption>
 </figure>
 
 
