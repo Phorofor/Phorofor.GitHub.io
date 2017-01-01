@@ -13,7 +13,7 @@ image:
 
 I decided to write this to reduce the tediousness it took for myself to browse through multiple forums and desperately lurk through search results for new answers and pointlessly watching newly encountered videos that provide pretty much **zero critical explanation** of any **consequences** that are incurred and not providing a **huge disclaimer that the ClassicTheme.exe utility has the potential to bug out**. The method I use for **manually removing this** is also in this post.
 
-*[Last Updated: Sun Jan 1 15:10:06 2017 UTC]*
+*[Last Updated: Sun Jan 1 15:35:30 UTC]*
 
 The following is a series of text, explaning the tools I encountered upon to be able to run the Classic Theme in latest versions of Windows (8.1/10) despite Microsoft removing the Windows Classic Theme that took place in Windows 8. It was featured in Windows XP and is no longer an available feature after Windows 7. Anything performed here is done for experimental purposes and I do not recommend this for the typical user. 
 
@@ -123,7 +123,7 @@ Many things are broken or have buggy visual artifacts if you ever want to actual
 * Some Control Panel applets will [fail to load](http://winclassic.boards.net/thread/11/issues-windows-classic-theme-on).
 
 #### If you want to prevent the DWM from running...
-With DWM off, you will simply achieve that Windows 7 Basic-like feel, with themes reverting to its 'Basic' variant instead of Aero and also removing those see-through portions of certain programs, but this breaks a lot more functionality, especially in Windows 10 where more of the UI is more dependant on the DWM than it was in 8.1.
+With DWM off, you will simply achieve that Windows 7 Basic-like feel, with themes reverting to its 'Basic' variant instead of Aero and also removing those see-through portions of certain programs, but this breaks a lot more functionality, especially in Windows 10 where more of the UI is more dependant on the DWM than it was in 8.1. In Windows 8.1, it's possible to achieve a *full* Classic Theme to some extent. It also stops the transparent bug as DWM is responsible for transparent effects.
 
 For Windows 8.1 users, there's a batch script provided by [R.O.B on the WinClassic Boards with a better explaination on this script than the simple one here](http://winclassic.boards.net/thread/129/alternate-method-disabling-dwm-windows) that renames the dwm.exe to a different name to prevent it from being able to run again for 3 seconds as the winlogon process doesn't bother to spawn the dwm process again, then it renames it back so it'll be able to be run again when needed. It also renames the files responsible for bringing up the search UI (adds a .BAK extension to them, preventing the search UI from creating the huge blank space that covers right side of the screen).
 
@@ -188,6 +188,8 @@ explorer.exe
 
 * Unlike having DWM forcibly killed in Windows 10, Windows 8.1 works just fine with jumplists and the taskbar. You still won't get thumbnails or Aero Peek, though.
 
+* The 'Open With' dialog will not work. Frieger's [OpenWith Enhanced](http://extensions.frieger.com/owdesc.php) mimics the Windows 7 Open With dialog with a few more additions which is not dependant upon the DWM. 
+
 * With DWM forced off, you'll exhibit screen tearing and it doesn't look too good. For some reason I've only noticed this when I've been trying DWM with it being forced off on Windows 10. It'll occasionally somehow disable my video driver up killing it for the integrated graphics card, so I would have to go to Device Manager or ``devmgmt.msc`` and disable and enable it.
 
 * If you like running Windows 10 with DWM forced off, go and [tweak your registry](http://www.askvg.com/collection-of-windows-10-hidden-secret-registry-tweaks/) to enable the legacy battery and volume taskbar fly-outs. The legacy clock is not a thing anymore since the anniversary update.
@@ -205,12 +207,16 @@ There's nothing really secure about this if you don't take the right precautions
 
 * If you still like having DWM off in Windows 10, [disable the modern-style Windows 10 UAC prompt](http://www.askvg.com/tip-disable-modern-uac-prompt-and-credential-ui-in-windows-10/). Forgetting to disable this will cause the UAC prompt to appear as a blank rectangle (although you can still invisibly navigate through it). 
 
+* The OpenWith 
+
 * UAC with the secure desktop seems to be broken with DWM off. If you've got access to the Local Security Policy or ``secpol.msc``, change your User Account Control settings to the maximum, then head to ``Local Security Policy > Local Policies > Security Options``, scroll to the bottom where it says 'User Account Control' for each entry, then configure these security settings.
 	* *User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode* - Change its Security Setting to 'Prompt for credentials'
 	* *User Account Control: Behavior of the elevation prompt for standard users* - Change its Security Setting to 'Prompt for credentials'
 	* *User Account Control: Switch to the secure desktop when prompting for elevation* - Change its Security Setting to 'Disabled'. You will compromise security, but it allows you to use UAC with DWM off.
 	* However, these may not be as useful or have zero effect if you're running Explorer with Administrator Priviledges as someone can just open a Run prompt and run anything they wish to (like ``netplwiz`` with no UAC consent). Again, I wouldn't recommend bothering to try and run Windows 10 with DWM off, unless you really are desperately wanting to see those basic themes. It also tends to disable the graphics driver.
 	* You should actually use UAC with prompts with credentials anyway for the best security (especially if there's other people physically nearby), preferably on the secure desktop since other software shouldn't be able to easily track your keystrokes. It's macOS-esque and gives you less opportunity to rush in and blatantly click 'Yes' without carefully reading what program is requesitng elevation.
+
+
 
 <figure>
 	<!-- <a href="#"> --><img src="/images/WinClassicTheme/WindowPainting.gif" alt="if"><!--</a>--><figcaption><a href="/images/WinClassicTheme/WindowPainting.gif" title="Simulated using Microsoft Paint while holding SHIFT on an image and dragging it at various paces.">Simulated using Microsoft Paint while holding SHIFT on an image and dragging it at various paces.</a></figcaption>
