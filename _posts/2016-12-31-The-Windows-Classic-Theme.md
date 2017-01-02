@@ -13,7 +13,7 @@ image:
 
 I decided to write this to reduce the tediousness it took for myself to browse through multiple forums and desperately lurk through search results for new answers and pointlessly watching newly encountered videos that provide pretty much **zero critical explanation** of any **consequences** that are incurred and not providing a **huge disclaimer that the ClassicTheme.exe utility has the potential to bug out**. The method I use for **manually removing this** is also in this post.
 
-*[Last Updated: Sun Jan 1 15:35:30 UTC]*
+*[Last Updated: Mon Jan 2 00:11:57 UTC]*
 
 The following is a series of text, explaning the tools I encountered upon to be able to run the Classic Theme in latest versions of Windows (8.1/10) despite Microsoft removing the Windows Classic Theme that took place in Windows 8. It was featured in Windows XP and is no longer an available feature after Windows 7. Anything performed here is done for experimental purposes and I do not recommend this for the typical user. 
 
@@ -302,12 +302,10 @@ Since using the 'Install' option for this program sets itself as the shell (that
 		<!-- <a href="#"> --><img src="/images/WinClassicTheme/BrokenExplorerTaskbar.gif" alt=""><!--</a>--><figcaption><a href="/images/WinClassicTheme/BrokenExplorerTaskbar.gif" title="If you FORGET to delete the 'Shell' item in the Registry, your taskbar is going to have its own party of preventing any Explorer window from opening.">If you FORGET to delete the 'Shell' item in the Registry, your taskbar is going to have its own party of preventing any Explorer window from opening as seen by the taskbar having its color black with its borders sticking out. This also happens if you do not delete the .dlls that were mentioned previously.</a></figcaption>
 	<figure>
 
-At this point, ClassicTheme.exe is still be marked as 'installed' and we'll need the original ClassicTheme.exe. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin. 
-
 ### You need access to another copy of ClassicTheme.exe
-For this final part, you need to be able to run the ClassicTheme.exe in order to stop the taskbar from breaking and Explorer windows refusing to open. I can't seem to find another way to fix this without having to use ClassicTheme.exe yet. So it may be problematic for a lot of antiviruses as **it'll remove it** before you even get to do anything. You will have to either whitelist a folder dedicated to ClassicTheme.exe or temporarily disable your anti-malware software which usually detects it if you're extracting it from the compressed archive, or you can use Safe Mode. 
+At this point, ClassicTheme.exe is still be marked as 'installed' and we'll need the ClassicTheme.exe. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin.  If you are still facing the black screen issue, continue following this and this should be able to fix it if doing the above didn't work. I can't seem to find another way to fix this without having to use ClassicTheme.exe yet. This may be problematic for a lot of antiviruses as **it'll remove it** before you even get to do anything. You will have to either whitelist a folder dedicated to ClassicTheme.exe or temporarily disable your anti-malware software which usually detects it if you're extracting it from the compressed archive, or you can use Safe Mode. 
 
-You still have to use the Run box or Task Manager new task dialog's 'Browse...' option to navigate through the file system with a GUI.
+You still have to use the Task Manager's 'new task' dialog's 'Browse...' option to navigate through the file system with a GUI.
 
 ### To run with Safe Mode (so you won't get AVs in the way)
 1. Go use the combination ``CTRL + ALT + DELETE`` to bring up the security options
