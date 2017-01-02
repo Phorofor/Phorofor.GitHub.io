@@ -303,8 +303,10 @@ Since using the 'Install' option for this program sets itself as the shell (that
 	<figure>
 
 
+At this point, ClassicTheme.exe is still be marked as 'installed' and we'll need the ClassicTheme.exe to change it back into its 'uninstalled' state. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin.  If you are still facing the black screen issue, continue following this and the final steps below should be able to fix it if doing the above didn't work. 
+
 ### You need access to another copy of ClassicTheme.exe
-At this point, ClassicTheme.exe is still be marked as 'installed' and we'll need the ClassicTheme.exe. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin.  If you are still facing the black screen issue, continue following this and this should be able to fix it if doing the above didn't work. I can't seem to find another way to fix this without having to use ClassicTheme.exe yet. This may be problematic for a lot of antiviruses as **it'll remove it** before you even get to do anything. You will have to either whitelist a folder dedicated to ClassicTheme.exe or temporarily disable your anti-malware software which usually detects it if you're extracting it from the compressed archive, or you can use Safe Mode. 
+I can't seem to find another way to fix this without having to use ClassicTheme.exe yet. This may be problematic for a lot of antiviruses as **it'll remove it** before you even get to do anything. You will have to either whitelist a folder dedicated to ClassicTheme.exe or temporarily disable your anti-malware software which usually detects it if you're extracting it from the compressed archive, or you can use Safe Mode. 
 
 You still have to use the Task Manager's 'new task' dialog's 'Browse...' option to navigate through the file system with a GUI.
 
