@@ -332,7 +332,7 @@ I messed with this program for a bit some time back and there's some interesting
 
 <figure>
 	<a href="/images/WinClassicTheme/ColorAppletDWMDisabled.png"><img src="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" alt=""></a>
-	<figcaption><a href="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" title="Was this supposed to be a toggle?">"{Desktop composition is disabled}"? Did Microsoft originally intend there to be a switch to do this, or does this message exist in other versions of Windows? I don't know since there's no *native* way to switch off the DWM in anything later than Windows 7. This is the result when trying to change the colors where it would open up the Immersive version of Settings.</a></figcaption>
+	<figcaption><a href="/images/WinClassicTheme/ColorAppletDWMDisabled.PNG" title="Was this supposed to be a toggle?">"{Desktop composition is disabled}"? Did Microsoft originally intend there to be a switch to do this, or does this message exist in other versions of Windows? I don't know since there's no *native* way to switch off the DWM in anything later than Windows 7. This is the result when trying to change the colors where it would open up the [Immersive version of Settings](ms-settings:personalization-colors).</a></figcaption>
 </figure>
 
 <figure>
