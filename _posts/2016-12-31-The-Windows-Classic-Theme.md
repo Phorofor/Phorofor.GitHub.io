@@ -207,8 +207,6 @@ There's nothing really secure about this if you don't take the right precautions
 
 * If you still like having DWM off in Windows 10, [disable the modern-style Windows 10 UAC prompt](http://www.askvg.com/tip-disable-modern-uac-prompt-and-credential-ui-in-windows-10/). Forgetting to disable this will cause the UAC prompt to appear as a blank rectangle (although you can still invisibly navigate through it). 
 
-* The OpenWith 
-
 * UAC with the secure desktop seems to be broken with DWM off. If you've got access to the Local Security Policy or ``secpol.msc``, change your User Account Control settings to the maximum, then head to ``Local Security Policy > Local Policies > Security Options``, scroll to the bottom where it says 'User Account Control' for each entry, then configure these security settings.
 	* *User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode* - Change its Security Setting to 'Prompt for credentials'
 	* *User Account Control: Behavior of the elevation prompt for standard users* - Change its Security Setting to 'Prompt for credentials'
