@@ -57,7 +57,7 @@ We can now run the ClassicTheme.exe. Here's a description of what these options 
 * Patch Internet Explorer - Essentially forces the Internet Explorer to run without DWM features, so no transparency effects will take place and won't run with an Aero Theme even if you're not running the ClassicTheme. Unfortunately, I'm not sure why IbmPad doesn't make this available when it's not installed.
 	1. **To undo this**, open up a Run dialog and place ``%SYSTEMDRIVE%\Program Files\Internet Explorer`` into the field.
 	2. If a file ``iexplore.bak0`` exists, delete ``iexplore.exe``, ``dwm_rdr.dll`` and ``dwmapi.dll``
-	3. Rename ``iexplore.bak0`` to iexplore.exe
+	3. Rename ``iexplore.bak0`` to ``iexplore.exe``
 
 * Enable Classic Theme now - *This is basically the way I highly recommend to use this tool. It lets you apply the Classic Theme to only newly spawned processes, so you can use this to run the taskbar without the Classic Theme applied as long as you do not restart Explorer. Otherwise, you'll have to logoff and logon again. This can also be accomplished manually by using something like Process Hacker and closing the ``ThemeSection`` handle under the ``winlogon.exe`` process, this is what this utility does.*
 
