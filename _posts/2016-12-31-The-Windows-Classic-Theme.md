@@ -13,7 +13,7 @@ image:
 
 I decided to write this to reduce the tediousness it took for myself to browse through multiple forums and desperately lurk through search results for new answers and pointlessly watching newly encountered videos that provide pretty much **zero critical explanation** of any **consequences** that are incurred and not providing a **huge disclaimer that the ClassicTheme.exe utility has the potential to bug out**. The method I use for **manually removing this** is also in this post.
 
-*[Last Updated: Mon Jan 2 00:11:57 UTC]*
+*[Last Updated: Tue, 10 Jan 2017 12:42:04 UTC]*
 
 The following is a series of text, explaning the tools I encountered upon to be able to run the Classic Theme in latest versions of Windows (8.1/10) despite Microsoft removing the Windows Classic Theme that took place in Windows 8. It was featured in Windows XP and is no longer an available feature after Windows 7. Anything performed here is done for experimental purposes and I do not recommend this for the typical user. 
 
@@ -181,6 +181,10 @@ pssuspend winlogon.exe
 taskkill /IM dwm.exe /f
 explorer.exe
 ```
+
+**Here's an alternate method that's a bit more stable for Windows 10:**  If you use a touchscreen, accessibility features or multiple keyboard layouts, this not recommended since you will have no touch input or accessibility features available. Also, **most of the consequences of having DWM turned off listed here will still remain** excluding the part about winlogon - you can still have your display sleep and be able to lock when timed out and secure desktop will work with the UAC with this method.
+
+You'll have to enable the [console based logon window](http://winaero.com/blog/enable-hidden-console-login-in-windows-10/) by following the contents of that link, or renaming ``C:\Windows\System32\Windows.UI.Logon.dll`` to something else. You must also replace your ``C:\Windows\System32\dwm.exe`` with something else, like [with the dummy DWM placeholder executable in this forum.](http://logs.omegle.com/85d789660c793087). If you remove or just rename DWM.exe without anything in its place, you'll encounter a black screen of nothingness. Also, you can use the suspend and kill winlogon batch script for the changes to take effect immediately. Just make sure you have something in place of dwm.exe or else your screen will be left blank.
 
 * Anything that involves the immersive flyouts will not work. This includes the network, battery, language, clock, volume and action center flyouts in the taskbar.
 
