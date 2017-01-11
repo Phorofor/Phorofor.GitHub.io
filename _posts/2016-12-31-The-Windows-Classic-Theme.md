@@ -38,7 +38,7 @@ Now, this program has a generic name called ``ClassicTheme.exe``, or just referr
 
 **An important thing to note here is this Classic Theme utility triggers a lot various antiviruses, so it's not recommended if you believe running this will somehow cause damage to your system which is probably why a lot of people who were uninformed and didn't look at [the original forum where this originated](http://forum.thinkpads.com/viewtopic.php?f=67&t=113024) are outraged (looking at those online video tutorials that didn't link to the original source or didn't mention the original forum where this was hosted). Source code is included in the original download, just don't go get it from other sources that's not on the forum that was described earlier. Create a folder for the Classic Theme executable and exclude it in your antivirus software if you wish to continue (not excluding it seems to cause it to break on the next login whenever an antivirus detects it and quarantines it, causing an empty blank desktop to appear).**
 
-If you've got the ClassicTheme program ready, I suggest you place it in a easy to access folder at the root of your system drive, such as ``C:\ClassicTheme\`` along with the other tools that will be mentioned. We'll be using [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/processexplorer.aspx) as a substitute for the Task Manager, as it'll make it easier incase something goes wrong since the fancy new(ish) Task Manager closes itself whenever the ClassicTheme.exe is active. I recommend placing Process Explorer with the same location as your ClassicTheme.exe.
+If you've got the ClassicTheme program ready, I suggest you place it in a easy to access folder at the root of your system drive, such as ``C:\ClassicTheme\`` along with the other tools that will be mentioned. We'll be using [Process Explorer](https://technet.microsoft.com/en-us/sysinternals/processexplorer.aspx) as a substitute for the Task Manager, as it'll make it easier in case something goes wrong since the fancy new(ish) Task Manager closes itself whenever the ClassicTheme.exe is active. I recommend placing Process Explorer with the same location as your ClassicTheme.exe.
 
 We're going to set the Process Explorer as the default Task Manager:
 * Right click Process Explorer then choose 'Run as Administrator'
@@ -184,7 +184,7 @@ explorer.exe
 
 ### Here's an alternate method that's a bit more stable for Windows 10**  
 
-If you use a touchscreen, accessibility features or multiple keyboard layouts, this not recommended since you will have no touch input or accessibility features available. Also, **most of the consequences of having DWM turned off listed here will still remain** excluding the part about winlogon - you can still have your display sleep and be able to lock when timed out and secure desktop will work with the UAC with this method.
+If you use a touchscreen, accessibility features or multiple keyboard layouts, this not recommended since you will have no touch input or accessibility features available. Also, **most of the consequences of having DWM turned off listed here will still remain** excluding the part about winlogon - you can still have your display sleep and be able to lock when timed out and secure desktop will work with the UAC with this method. **You may also be logged out somewhat randomly if you log back in from the screen (where select another user). So be sure to save your work if you leave your computer.**
 
 You'll have to enable the [console based logon window](http://winaero.com/blog/enable-hidden-console-login-in-windows-10/) by following the contents of that link, or renaming ``C:\Windows\System32\Windows.UI.Logon.dll`` to something else. You must also replace your ``C:\Windows\System32\dwm.exe`` with something else, like [with the dummy DWM placeholder executable in this forum.](http://logs.omegle.com/85d789660c793087). If you remove or just rename DWM.exe without anything in its place, you'll encounter a black screen of nothingness. Also, you can use the suspend and kill winlogon batch script for the changes to take effect immediately. Just make sure you have something in place of dwm.exe or else your screen will be left blank.
 
@@ -262,7 +262,7 @@ The memory usage difference should be negligible for most people, with a 32,260 
 
 ## Removal/Manual Uninstallation of ClassicTheme.exe
 <blockquote>
-"I got a black screen after installing ClassicTheme.exe. You damaged my computer with an evil virus! *******! I want refund back! What now?" 
+"I got a black screen after installing ClassicTheme.exe. You damaged my computer with an evil virus! *******! I want a refund back! What now?" 
 </blockquote>
 *—Various user comments of those not understanding that this can easily bug out, temporarily leaving them with a broken login shell.*
 
@@ -309,7 +309,7 @@ Since using the 'Install' option for this program sets itself as the shell (that
 	<figure>
 
 
-At this point, ClassicTheme.exe is still be marked as 'installed' and we'll need the ClassicTheme.exe to change it back into its 'uninstalled' state. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin.  If you are still facing the black screen issue, continue following this and the final steps below should be able to fix it if doing the above didn't work. 
+At this point, ClassicTheme.exe is still marked as 'installed' and we'll need the ClassicTheme.exe to change it back into its 'uninstalled' state. However, logging out and back in should work normally up to this point. Alternatively, you can run ``userinit`` instead of having to relogin.  If you are still facing the black screen issue, continue following this and the final steps below should be able to fix it if doing the above didn't work. 
 
 ### You need access to another copy of ClassicTheme.exe
 I can't seem to find another way to fix this without having to use ClassicTheme.exe yet. This may be problematic for a lot of antiviruses as **it'll remove it** before you even get to do anything. You will have to either whitelist a folder dedicated to ClassicTheme.exe or temporarily disable your anti-malware software which usually detects it if you're extracting it from the compressed archive, or you can use Safe Mode. 
@@ -322,13 +322,13 @@ You still have to use the Task Manager's 'new task' dialog's 'Browse...' option 
 3. Now go to ``File > Run new task... (or Run...) > Type 'msconfig' in the field > OK`` 
 4. Choose the 'Boot' tab, then choose 'Safe boot' with the 'Network' radio button selected, this is so you can download the ClassicTheme files again in the event that your antivirus software already deleted your copies of the ClassicTheme files. Click 'OK' to save changes. Restart by using the ``CTRL + ALT + DELETE`` options if it doesn't prompt you.
 
-#### Once you're in safe mode:
+#### Once you're in Safe Mode:
 1. Go use the combination ``CTRL + ALT + DELETE`` to bring up the security options
 2. Choose 'Task Manager'
 3. Now go to ``File > Run new task... (or Run...) > Browse...`` 
 4. Navigate using the 'Browse...' option in the Run dialog, then navigate to your ClassicTheme.exe and run the file. **Ensure you have 'All files' selected in the dropdown menu instead of 'Programs'.**
-5. Click 'Uninstall'. It'll fix up the remaining broken dark taskbar upon the next login. It's better off to run it as ClassicThemeA.exe as it does not create any additional modifications to your system and logging out and logging back in will bring you back with the default themes.
-6. If you need to access the [Classic Theme files from the internet](http://forum.thinkpads.com/viewtopic.php?f=67&t=113024), you can do so by running a new task, ``iexplore.exe``. This will open the Internet Explorer, the default browser incase you do not have any other browser installed on the machine. 			
+5. Click 'Uninstall'. It'll fix up the remaining broken dark taskbar upon the next login if it hasn't already. It's better off to run it as ClassicThemeA.exe as it does not create any additional modifications to your system and logging out and logging back in will bring you back with the default themes.
+6. If you need to access the [Classic Theme files from the internet](http://forum.thinkpads.com/viewtopic.php?f=67&t=113024), you can do so by running a new task, ``iexplore.exe``. This will open the Internet Explorer, the default browser in case you do not have any other browser installed on the machine. 			
 	* Alternatives include ``chrome.exe`` and ``firefox.exe`` which may also work, assuming you have them installed.
 
 7. Review the settings of msconfig once again and uncheck 'Safe boot' from the 'Boot' tab so you can boot normally. Click 'OK' to save your changes. Reboot through the prompt or the ``CTRL + ALT + DELETE`` options. You should now be able to login with Explorer behaving normally.
