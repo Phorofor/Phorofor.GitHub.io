@@ -10,7 +10,7 @@ image:
   credit: "Note: 'This PC' and 'File History'"
   creditlink: /images/WinClassicTheme/BackgroundImage.png
 ---
-**2019-05-17 - Quick note**: This is out-of-date and was only relevant for previous versions of Windows 10 (1609, 1703). Windows 8.1 should be able to work fine as is.
+**2019-05-17 - Quick note**: This is out-of-date and was only relevant for previous versions of Windows 10 (1607, 1703). Windows 8.1 should be able to work fine as is.
 
 I decided to write this to reduce the tediousness it took for myself to browse through multiple forums and desperately lurk through search results for new answers and pointlessly watching newly encountered videos that provide pretty much **zero critical explanation** of any **consequences** that are incurred and not providing a **huge disclaimer that the ClassicTheme.exe utility has the potential to bug out**. The method I use for **manually removing this** is also in this post.
 
